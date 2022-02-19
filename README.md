@@ -10,4 +10,5 @@ fastapi, hypercorn, sqlalchemy
 
 # Type to console
 
-hypercorn main:app --reload
+>> hypercorn main:app --reload
+
