@@ -8,6 +8,6 @@ pip install ...
 fastapi, hypercorn, sqlalchemy
 
 
-#Type to console
+# Type to console
 
 hypercorn main:app --reload
