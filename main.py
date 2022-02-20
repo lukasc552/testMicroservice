@@ -21,16 +21,17 @@ def get_db():
 def index():
     return {}
 
-@app.get('/posts')
-def get_all_posts(db: Session = Depends(get_db), limit: int = 10):
-    return services.get_posts(db=db, limit=limit)
+# @app.get('/posts')
+# def get_all_posts(db: Session = Depends(get_db), limit: int = 10):
+#     return services.get_posts(db=db, limit=limit)
 
 
 @app.post('/posts')
 def create_post(post: schema.BasePost, db: Session = Depends(get_db)):
-    if extern.validate_user(post.userId):
-        return services.create_post(db=db, post=post)
-    return {}
+    return services.create_post(db=db, post=post)
 
 
+@app.get('/post/{postId}')
+def get_post(postId: int, db: Session = Depends(get_db)):
+    return services.get_post_by_id(db=db, postId=postId)
 

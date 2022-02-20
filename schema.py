@@ -7,9 +7,5 @@ class BasePost(BaseModel):
     body: str
 
 
-# class CreatePost(BasePost):
-#     pass
-
-
 class Post(BasePost):
     id: int
